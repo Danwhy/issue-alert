@@ -1,0 +1,93 @@
+2015-06-22T16:05:39.782094000 0.599621s notice: Recursively removing directory /Users/Daniel/projects/rethink/rethinkdb_data/tmp
+2015-06-22T16:05:39.783020000 0.600549s notice: Initializing directory /Users/Daniel/projects/rethink/rethinkdb_data
+2015-06-22T16:05:39.783077000 0.600603s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/Daniel/projects/rethink/rethinkdb_data' did not already exist or is empty.)
+2015-06-22T16:05:39.783126000 0.600653s notice: Running rethinkdb 2.0.3 (CLANG 6.1.0 (clang-602.0.53))...
+2015-06-22T16:05:39.802671000 0.620199s notice: Running on Darwin 14.3.0 x86_64
+2015-06-22T16:05:39.802707000 0.620234s notice: Loading data from directory /Users/Daniel/projects/rethink/rethinkdb_data
+2015-06-22T16:05:39.920725000 0.738251s info: Automatically using cache size of 4931 MB
+2015-06-22T16:05:39.921195000 0.738722s notice: Listening for intracluster connections on port 29015
+2015-06-22T16:05:39.922475000 0.739961s notice: Listening for client driver connections on port 28015
+2015-06-22T16:05:39.922549000 0.740035s notice: Listening for administrative HTTP connections on port 8080
+2015-06-22T16:05:39.922554000 0.740040s notice: Listening on addresses: 127.0.0.1, ::1
+2015-06-22T16:05:39.922568000 0.740055s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-06-22T16:05:39.922574000 0.740060s notice: Server ready, "Daniels_MacBook_Pro_local_wen" 77158efd-e46c-49a5-a8e1-e4b4e33a54b8
+2015-06-22T16:31:53.717110000 1574.419150s notice: Server got SIGINT from pid 13268, uid 503; shutting down...
+2015-06-22T16:31:53.717206000 1574.419246s notice: Shutting down client connections...
+2015-06-22T16:31:53.717355000 1574.419395s notice: All client connections closed.
+2015-06-22T16:31:53.717364000 1574.419404s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-06-22T16:31:53.717645000 1574.419685s notice: Storage engine shut down.
+2015-06-22T16:32:46.158438000 0.004272s notice: Running rethinkdb 2.0.3 (CLANG 6.1.0 (clang-602.0.53))...
+2015-06-22T16:32:46.161461000 0.007291s notice: Running on Darwin 14.3.0 x86_64
+2015-06-22T16:32:46.161509000 0.007339s notice: Loading data from directory /Users/Daniel/projects/rethink/rethinkdb_data
+2015-06-22T16:32:46.197301000 0.043130s info: Automatically using cache size of 4389 MB
+2015-06-22T16:32:46.197758000 0.043588s notice: Listening for intracluster connections on port 29015
+2015-06-22T16:32:46.198905000 0.044734s notice: Listening for client driver connections on port 28015
+2015-06-22T16:32:46.198991000 0.044821s notice: Listening for administrative HTTP connections on port 8080
+2015-06-22T16:32:46.199001000 0.044830s notice: Listening on addresses: 127.0.0.1, ::1
+2015-06-22T16:32:46.199004000 0.044833s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-06-22T16:32:46.199006000 0.044835s notice: Server ready, "Daniels_MacBook_Pro_local_wen" 77158efd-e46c-49a5-a8e1-e4b4e33a54b8
+2015-06-22T16:42:41.026748000 594.828937s notice: Server got SIGINT from pid 13268, uid 503; shutting down...
+2015-06-22T16:42:41.026877000 594.829065s notice: Shutting down client connections...
+2015-06-22T16:42:41.026961000 594.829150s notice: All client connections closed.
+2015-06-22T16:42:41.026965000 594.829154s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-06-22T16:42:41.027254000 594.829443s notice: Storage engine shut down.
+2015-06-22T16:42:43.831604000 0.604167s notice: Running rethinkdb 2.0.3 (CLANG 6.1.0 (clang-602.0.53))...
+2015-06-22T16:42:43.850067000 0.622628s notice: Running on Darwin 14.3.0 x86_64
+2015-06-22T16:42:43.850111000 0.622670s notice: Loading data from directory /Users/Daniel/projects/rethink/rethinkdb_data
+2015-06-22T16:42:43.889977000 0.662537s info: Automatically using cache size of 4375 MB
+2015-06-22T16:42:43.890509000 0.663068s notice: Listening for intracluster connections on port 29015
+2015-06-22T16:42:43.891585000 0.664144s notice: Listening for client driver connections on port 28015
+2015-06-22T16:42:43.891644000 0.664203s notice: Listening for administrative HTTP connections on port 8080
+2015-06-22T16:42:43.891648000 0.664207s notice: Listening on addresses: 127.0.0.1, ::1
+2015-06-22T16:42:43.891650000 0.664209s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-06-22T16:42:43.891655000 0.664214s notice: Server ready, "Daniels_MacBook_Pro_local_wen" 77158efd-e46c-49a5-a8e1-e4b4e33a54b8
+2015-06-22T16:56:19.257833000 815.970533s notice: Server got SIGINT from pid 13268, uid 503; shutting down...
+2015-06-22T16:56:19.257969000 815.970670s notice: Shutting down client connections...
+2015-06-22T16:56:19.258293000 815.970994s notice: All client connections closed.
+2015-06-22T16:56:19.258304000 815.971004s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-06-22T16:56:19.263264000 815.975964s notice: Storage engine shut down.
+2015-06-22T16:56:20.932497000 0.602996s notice: Running rethinkdb 2.0.3 (CLANG 6.1.0 (clang-602.0.53))...
+2015-06-22T16:56:20.937419000 0.607916s notice: Running on Darwin 14.3.0 x86_64
+2015-06-22T16:56:20.937467000 0.607963s notice: Loading data from directory /Users/Daniel/projects/rethink/rethinkdb_data
+2015-06-22T16:56:20.974414000 0.644910s info: Automatically using cache size of 4327 MB
+2015-06-22T16:56:20.974851000 0.645347s notice: Listening for intracluster connections on port 29015
+2015-06-22T16:56:20.975985000 0.646481s notice: Listening for client driver connections on port 28015
+2015-06-22T16:56:20.976112000 0.646608s notice: Listening for administrative HTTP connections on port 8080
+2015-06-22T16:56:20.976114000 0.646610s notice: Listening on addresses: 127.0.0.1, ::1
+2015-06-22T16:56:20.976118000 0.646614s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-06-22T16:56:20.976122000 0.646617s notice: Server ready, "Daniels_MacBook_Pro_local_wen" 77158efd-e46c-49a5-a8e1-e4b4e33a54b8
+2015-06-23T10:46:54.184807000 6510.417556s notice: Server got SIGINT from pid 13268, uid 503; shutting down...
+2015-06-23T10:46:54.184958000 6510.417704s notice: Shutting down client connections...
+2015-06-23T10:46:54.185099000 6510.417845s notice: All client connections closed.
+2015-06-23T10:46:54.185106000 6510.417852s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2015-06-23T10:46:54.192576000 6510.425322s notice: Storage engine shut down.
+2015-06-23T16:12:06.241207000 0.566353s notice: Running rethinkdb 2.0.3 (CLANG 6.1.0 (clang-602.0.53))...
+2015-06-23T16:12:06.245767000 0.570910s notice: Running on Darwin 14.3.0 x86_64
+2015-06-23T16:12:06.245808000 0.570949s notice: Loading data from directory /Users/Daniel/projects/rethink/rethinkdb_data
+2015-06-23T16:12:06.285457000 0.610598s info: Automatically using cache size of 4592 MB
+2015-06-23T16:12:06.287270000 0.612411s notice: Listening for intracluster connections on port 29015
+2015-06-23T16:12:06.290164000 0.615305s notice: Listening for client driver connections on port 28015
+2015-06-23T16:12:06.290393000 0.615534s notice: Listening for administrative HTTP connections on port 8080
+2015-06-23T16:12:06.290401000 0.615542s notice: Listening on addresses: 127.0.0.1, ::1
+2015-06-23T16:12:06.290402000 0.615543s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-06-23T16:12:06.290405000 0.615546s notice: Server ready, "Daniels_MacBook_Pro_local_wen" 77158efd-e46c-49a5-a8e1-e4b4e33a54b8
+2015-06-23T20:48:42.260670000 0.623803s notice: Running rethinkdb 2.0.3 (CLANG 6.1.0 (clang-602.0.53))...
+2015-06-23T20:48:42.281944000 0.645073s notice: Running on Darwin 14.3.0 x86_64
+2015-06-23T20:48:42.281980000 0.645107s notice: Loading data from directory /Users/Daniel/projects/rethink/rethinkdb_data
+2015-06-23T20:48:42.323631000 0.686759s info: Automatically using cache size of 4833 MB
+2015-06-23T20:48:42.325027000 0.688155s notice: Listening for intracluster connections on port 29015
+2015-06-23T20:48:42.327424000 0.690552s notice: Listening for client driver connections on port 28015
+2015-06-23T20:48:42.327570000 0.690698s notice: Listening for administrative HTTP connections on port 8080
+2015-06-23T20:48:42.327573000 0.690701s notice: Listening on addresses: 127.0.0.1, ::1
+2015-06-23T20:48:42.327578000 0.690705s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-06-23T20:48:42.327582000 0.690710s notice: Server ready, "Daniels_MacBook_Pro_local_wen" 77158efd-e46c-49a5-a8e1-e4b4e33a54b8
+2015-06-23T20:52:47.878642000 0.028978s notice: Running rethinkdb 2.0.3 (CLANG 6.1.0 (clang-602.0.53))...
+2015-06-23T20:52:47.882803000 0.033100s notice: Running on Darwin 14.3.0 x86_64
+2015-06-23T20:52:47.882845000 0.033140s notice: Loading data from directory /Users/Daniel/projects/rethink/rethinkdb_data
+2015-06-23T20:52:47.962608000 0.112904s info: Automatically using cache size of 6947 MB
+2015-06-23T20:52:47.963932000 0.114227s notice: Listening for intracluster connections on port 29015
+2015-06-23T20:52:47.966906000 0.117201s notice: Listening for client driver connections on port 28015
+2015-06-23T20:52:47.967079000 0.117374s notice: Listening for administrative HTTP connections on port 8080
+2015-06-23T20:52:47.967084000 0.117380s notice: Listening on addresses: 127.0.0.1, ::1
+2015-06-23T20:52:47.967090000 0.117385s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-06-23T20:52:47.967100000 0.117395s notice: Server ready, "Daniels_MacBook_Pro_local_wen" 77158efd-e46c-49a5-a8e1-e4b4e33a54b8

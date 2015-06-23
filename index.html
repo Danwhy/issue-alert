@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hello</title>
+    </head>
+    <body>
+        <form id="upload" action="/create" enctype="multipart/form-data" method="post">
+            <input id="issue"type="text" name="issue" multiple="multiple"><br>
+            <input id="issuer"type="text" name="issuer" multiple="multiple"><br>
+            <input type="submit" value="Upload">
+        </form>
+        <div id="insert">
+        </div>
+        <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+        <script src="static/script.js"></script>
+    </body>
+</html>
