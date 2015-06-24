@@ -37,20 +37,13 @@ server.route({
     method: 'POST',
     path: '/create',
     handler: function(request, reply){
+        console.log('5');
         r.table('issues').insert(request.payload).run(connection, function(err, result){
             if (err) {
                 throw err;
             }
             return;
         });
-    }
-});
-
-server.route({
-    method: 'GET',
-    path: '/',
-    handler: function(request, reply){
-        reply.file('index.html');
     }
 });
 
@@ -66,14 +59,22 @@ server.route({
             cursor.each(function(err, row){
                 iss.push(row);
             });
-            reply.file('index.html');
-            r.table('issues').changes().run(connection, function(err, cursor) {
-                if (err) {
-                    throw err;
-                }
-                cursor.each(function(err, change) {
-                    io.emit('issue', change);
-                });
+            reply(iss);
+        });
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/',
+    handler: function(request, reply){
+        reply.file('index.html');
+        r.table('issues').changes().run(connection, function(err, cursor) {
+            if (err) {
+                throw err;
+            }
+            cursor.each(function(err, change) {
+                io.emit('issue', change);
             });
         });
     }
@@ -81,7 +82,7 @@ server.route({
 
 io.on('connection', function(socket){
     socket.on('issue', function(socket){
-        console.log('mmm');
+        console.log(socket);
     });
 });
 
