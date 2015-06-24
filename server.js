@@ -12,7 +12,6 @@ r.connect( {host: 'localhost', port: 28015}, function(err, conn) {
 });
 
 server.connection({
-    host: 'localhost',
     port: 8000
 });
 
@@ -35,15 +34,25 @@ server.route({
 
 server.route({
     method: 'POST',
+    path: '/uploads',
+    handler: function(request, reply){
+        console.log(request.payload);
+        reply('thanks');
+    }
+});
+
+server.route({
+    method: 'POST',
     path: '/create',
     handler: function(request, reply){
-        console.log('5');
-        r.table('issues').insert(request.payload).run(connection, function(err, result){
+        var issue = JSON.parse(request.payload.payload);
+        r.table('issues').insert({issue: issue.issue.title, body: issue.issue.body}).run(connection, function(err, result){
             if (err) {
                 throw err;
             }
             return;
         });
+        reply('thanks');
     }
 });
 
