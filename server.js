@@ -2,10 +2,10 @@ var Hapi = require('hapi');
 var server = new Hapi.Server();
 var r = require('rethinkdb');
 var connection = null;
+var httpRequest = require('request');
 
 r.connect( {host: 'localhost', port: 28015}, function(err, conn) {
     if (err) {
-        console.log(err);
         throw err;
     }
     connection = conn;
@@ -13,6 +13,30 @@ r.connect( {host: 'localhost', port: 28015}, function(err, conn) {
 
 server.connection({
     port: 8000
+});
+
+server.route({
+    method: 'GET',
+    path: '/hook',
+    handler: function(request, reply){
+        httpRequest.post({
+            url: 'https://api.github.com/repos/danwhy/issue-alert/hooks',
+            headers: {
+                'user-agent': 'danwhy',
+                'Authorization': 'token ' + process.env.GITHUBTOKEN
+            },
+            json: {
+                name: 'web',
+                config: {
+                    url: server.info.uri + '/create'
+                },
+                events: ['issues']
+            }},
+            function(err, req, res){
+                reply(console.log('Hook added: ' + res));
+            }
+        );
+    }
 });
 
 server.views({
@@ -34,15 +58,6 @@ server.route({
 
 server.route({
     method: 'POST',
-    path: '/uploads',
-    handler: function(request, reply){
-        console.log(request.payload);
-        reply('thanks');
-    }
-});
-
-server.route({
-    method: 'POST',
     path: '/create',
     handler: function(request, reply){
         var issue = JSON.parse(request.payload.payload);
@@ -52,7 +67,7 @@ server.route({
             }
             return;
         });
-        reply('thanks');
+        reply(console.log(issue.issue.title + ' added to database'));
     }
 });
 
@@ -60,6 +75,7 @@ server.route({
     method: 'GET',
     path: '/issues',
     handler: function(request, reply){
+        console.log(server.info);
         r.table('issues').run(connection, function(err, cursor){
             var iss = [];
             if (err){
@@ -87,12 +103,6 @@ server.route({
             });
         });
     }
-});
-
-io.on('connection', function(socket){
-    socket.on('issue', function(socket){
-        console.log(socket);
-    });
 });
 
 server.start();

@@ -1,0 +1,29 @@
+{
+  "name": "issue-alert",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Danwhy/issue-alert.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Danwhy/issue-alert/issues"
+  },
+  "homepage": "https://github.com/Danwhy/issue-alert",
+  "dependencies": {
+    "gith": "^1.0.4",
+    "github": "^0.2.4",
+    "handlebars": "^3.0.3",
+    "hapi": "^8.6.1",
+    "request": "^2.58.0",
+    "rethinkdb": "^2.0.2",
+    "socket.io": "^1.3.5"
+  }
+}
