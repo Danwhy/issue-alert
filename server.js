@@ -3,13 +3,7 @@ var server = new Hapi.Server();
 var r = require('rethinkdb');
 var connection = null;
 var httpRequest = require('request');
-
-r.connect( {host: 'localhost', port: 28015}, function(err, conn) {
-    if (err) {
-        throw err;
-    }
-    connection = conn;
-});
+var dbOptions = {host: '127.0.0.2', port: 28015};
 
 server.connection({
     port: 8000
@@ -57,34 +51,25 @@ server.route({
 });
 
 server.route({
-    method: 'POST',
-    path: '/create',
-    handler: function(request, reply){
-        var issue = JSON.parse(request.payload.payload);
-        r.table('issues').insert({issue: issue.issue.title, body: issue.issue.body}).run(connection, function(err, result){
-            if (err) {
-                throw err;
-            }
-            return;
-        });
-        reply(console.log(issue.issue.title + ' added to database'));
-    }
-});
-
-server.route({
     method: 'GET',
     path: '/issues',
     handler: function(request, reply){
-        console.log(server.info);
-        r.table('issues').run(connection, function(err, cursor){
-            var iss = [];
-            if (err){
-                throw err;
+        r.connect(dbOptions, function(err, conn) {
+            if (err) {
+                console.log(err);
             }
-            cursor.each(function(err, row){
-                iss.push(row);
+            connection = conn;
+            console.log('connected');
+            r.table('issues').run(connection, function(err, cursor) {
+                var iss = [];
+                if (err){
+                    throw err;
+                }
+                cursor.each(function(err, row) {
+                    iss.push(row);
+                });
+                reply(iss);
             });
-            reply(iss);
         });
     }
 });
@@ -94,12 +79,19 @@ server.route({
     path: '/',
     handler: function(request, reply){
         reply.file('index.html');
-        r.table('issues').changes().run(connection, function(err, cursor) {
+        r.connect(dbOptions, function(err, conn) {
             if (err) {
-                throw err;
+                console.log(err);
             }
-            cursor.each(function(err, change) {
-                io.emit('issue', change);
+            connection = conn;
+            console.log('connected');
+            r.table('issues').changes().run(connection, function(err, cursor) {
+                if (err) {
+                    throw err;
+                }
+                cursor.each(function(err, change) {
+                    io.emit('issue', change);
+                });
             });
         });
     }
