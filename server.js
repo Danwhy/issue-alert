@@ -6,7 +6,7 @@ var httpRequest = require('request');
 var dbOptions = {host: '127.0.0.2', port: 28015};
 
 server.connection({
-    port: 8000
+    port: process.env.PORT || 8000
 });
 
 server.route({
