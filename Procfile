@@ -1,1 +1,1 @@
-web: tunnel.py && node server.js
+web: python tunnel.py && node server.js
