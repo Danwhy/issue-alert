@@ -24,7 +24,7 @@ fs.writeFile('tmp', keyFile, function(err){
     }
 });
 
-var args = ['-f', '-N', host, '-i', 'tmp', '-o', 'StrictHostKeyChecking=no',
+var args = ['-f', '-N', host, '-i', './tmp', '-o', 'StrictHostKeyChecking=no',
 '-o', 'ExitOnForwardFailure=yes'];
 
 if (port){
