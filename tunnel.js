@@ -1,5 +1,5 @@
 var fs = require('fs');
-var exec = require('child_process').exec;
+var spawn = require('child_process').spawn;
 var fullKey = process.env.SSH_TUNNEL_KEY.split(':');
 var type = fullKey[0];
 var key = fullKey[1];
@@ -14,13 +14,9 @@ keyFile += '-----END ' + type + ' PRIVATE KEY-----\n';
 
 var target = process.env.SSH_TUNNEL_TARGET.split(':');
 var host = target[0];
-var port = target[1] ? '-p ' + target[1] : '';
+var port = target[1];
 
-var forwards = process.env.SSH_TUNNEL_FORWARDS.split(',')
-    .map(function(element){
-        return '-L ' + element;
-    })
-    .join(' ');
+var forwards = process.env.SSH_TUNNEL_FORWARDS.split(',');
 
 fs.writeFile('tmp', keyFile, function(err){
     if (err){
@@ -28,7 +24,17 @@ fs.writeFile('tmp', keyFile, function(err){
     }
 });
 
-exec('ssh -N ' + host  + ' ' + port + ' ' + forwards + ' -i tmp')
+var args = ['-N', host, '-i', 'tmp'];
+
+if (port){
+    args.push('-p', port);
+}
+
+for (var i = 0; i < forwards.length; i++){
+    args.push('-L', forwards[i]);
+}
+
+spawn('ssh', args)
     .on('error', function(err){
         throw err;
     });
